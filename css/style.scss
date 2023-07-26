@@ -1,0 +1,104 @@
+@import './settings';
+
+main{
+    width: calc(100% - 48px);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 24px;
+    .cards{
+        max-width: 750px;
+        display: flex;
+        justify-content: center;
+        border-radius: 4px;
+        .card:first-child{
+            background: $brightOrange;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            button{
+                color: $brightOrange;
+                &:hover{
+                    background: transparent;
+                    color: $bg;
+                    cursor: pointer;
+                }
+            }
+        }
+        .card:nth-child(2){
+            background: $darkCyan;
+            button{
+                color: $darkCyan;
+                &:hover{
+                    background: transparent;
+                    color: $bg;
+                    cursor: pointer;
+                }
+            }
+        }
+        .card:nth-child(3){
+            background: $veryDarkCyan;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            button{
+                color: $veryDarkCyan;
+                &:hover{
+                    background: transparent;
+                    color: $bg;
+                    cursor: pointer;
+                }
+            }
+        }
+        .card{
+            padding: 32px;
+            h1{
+                color: $bg;
+                text-transform: uppercase;
+            }
+            p{
+                color: $paragraph;
+                font-size: 0.7em;
+                line-height: 18px;
+                margin-bottom: 64px;
+                padding-right: 26px;
+            }
+            .button{
+                button{
+                    border: 2px solid $bg;
+                    border-radius: 24px;
+                    padding: 9px 18px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 600px) {
+        padding: 24px;
+        .cards{
+            flex-direction: column;
+            max-width: 375px;
+            .card:first-child{
+                border-top-left-radius: 6px;
+                border-top-right-radius: 6px;
+                border-bottom-left-radius: 0;
+            }
+            .card:nth-child(3){
+                border-bottom-left-radius: 6px;
+                border-bottom-right-radius: 6px;
+                border-top-right-radius: 0;
+                button{
+                    color: $veryDarkCyan;
+                    &:hover{
+                        background: transparent;
+                        color: $bg;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+footer{
+    text-align: center;
+    padding-bottom: 18px;
+}
